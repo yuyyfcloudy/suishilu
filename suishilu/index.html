@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>岁时录</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="book">
+
+    <div class="page left">
+
+        <h1>岁时录</h1>
+
+        <div class="date-info">
+            <p id="today"></p>
+            <p id="lunar">农历六月初九 · 大暑</p>
+        </div>
+
+        <div class="calendar">
+
+            <div class="week">
+                <span>日</span>
+                <span>月</span>
+                <span>火</span>
+                <span>水</span>
+                <span>木</span>
+                <span>金</span>
+                <span>土</span>
+            </div>
+
+            <div id="days"></div>
+
+        </div>
+
+    </div>
+
+
+    <div class="page right">
+
+        <h2>今日笺录</h2>
+
+        <div id="notes"></div>
+
+        <button onclick="openNote()">
+            ＋ 添一笺
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- 添加备忘录 -->
+
+<div class="modal" id="modal">
+
+    <div class="paper">
+
+        <h2>落笺</h2>
+
+        <input type="date" id="noteDate">
+
+        <input type="time" id="noteTime">
+
+
+        <textarea 
+        id="noteText"
+        placeholder="写下今日之事……">
+        </textarea>
+
+
+        <button onclick="saveNote()">
+            落笺
+        </button>
+
+        <button onclick="closeNote()">
+            收起
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- 提醒 -->
+
+<div class="reminder" id="reminder">
+
+    <div>
+        <h2>岁时提醒</h2>
+
+        <p id="reminderText"></p>
+
+        <button onclick="closeReminder()">
+            知晓
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
