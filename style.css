@@ -496,20 +496,17 @@ textarea{
 
 .seal{
 
-    position:absolute;
+    position:fixed;
 
-    right:70px;
-
-    top:80px;
+    right:40px;
+    top:40px;
 
 
     width:55px;
-
-    height:55px;
+    height:80px;
 
 
     border:2px solid #a33b32;
-
 
     color:#a33b32;
 
@@ -521,16 +518,19 @@ textarea{
     align-items:center;
 
 
-    text-align:center;
+    writing-mode:vertical-rl;
+
+
+    font-family:"KaiTi","STKaiti",serif;
 
 
     font-size:20px;
 
 
-    line-height:22px;
+    letter-spacing:8px;
 
 
-    font-family:"KaiTi";
+    line-height:1;
 
 
     opacity:.75;
@@ -538,8 +538,11 @@ textarea{
 
     transform:rotate(-8deg);
 
-}
 
+    background:
+    rgba(250,245,232,.25);
+
+}
 
 
 /* 云雾 */
