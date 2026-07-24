@@ -37,6 +37,30 @@ body{
 }
 
 
+body::after{
+
+content:"";
+
+position:fixed;
+
+right:80px;
+bottom:30px;
+
+width:250px;
+height:250px;
+
+background:
+linear-gradient(
+120deg,
+transparent 45%,
+rgba(80,100,70,.08) 46%,
+transparent 47%
+);
+
+transform:rotate(-20deg);
+
+}
+
 /* 页面整体 */
 
 .book{
@@ -150,12 +174,17 @@ color:#29251f;
 .left{
 
     border-right:
+	
+    width:45%;	
 
     1px solid #ddd0b5;
 
 }
 
 
+.right{
+ width:55%;
+}
 
 
 
@@ -591,6 +620,8 @@ letter-spacing:5px;
 
 .seal{
 
+	transform:
+ rotate(-8deg);
     position:fixed;
 
     right:40px;
