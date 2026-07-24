@@ -227,26 +227,30 @@ color:#29251f;
 
 h1{
 
-
     text-align:center;
-
 
     font-size:48px;
 
-
-    letter-spacing:20px;
-
+    letter-spacing:10px;
 
     font-weight:500;
 
-
     margin:20px 0;
 
+    white-space:nowrap;
 
 }
 
 
+.weather{
 
+    position:absolute;
+
+    left:40px;
+
+    top:300px;
+
+}
 
 
 h2{
