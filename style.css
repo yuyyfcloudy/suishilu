@@ -42,14 +42,18 @@ body{
 .book{
 
     width:1000px;
-
     height:650px;
-
 
     display:flex;
 
+    background:
+    radial-gradient(
+        rgba(120,100,60,.05) 1px,
+        transparent 1px
+    ),
+    #f8f3e7;
 
-    background:#f8f3e7;
+    background-size:8px 8px;
 
 
     border-radius:24px;
@@ -438,19 +442,86 @@ textarea{
     justify-content:center;
 
 
-    height:55px;
+    height:60px;
 
-    padding:12px;
-
-    margin:4px;
+    margin:5px;
 
 
-    cursor:pointer;
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    border-radius:12px;
+
+
+    transition:.3s;
+
+}
+
+
+.day:hover{
+
+    background:#65705a;
+
+    color:white;
+
+    transform:translateY(-3px);
+
+}
+
+
+.day:hover .lunar-day{
+
+    color:white;
+
+}
+
+
+.today{
+
+    background:#a33b32;
+
+    color:white;
 
     border-radius:50%;
 
+}
 
-    transition:.25s;
+
+.daily{
+
+margin-top:80px;
+
+padding-top:20px;
+
+border-top:1px solid #ddd0b5;
+
+color:#75664d;
+
+}
+
+
+.daily h3{
+
+font-size:20px;
+
+font-weight:400;
+
+letter-spacing:5px;
+
+}
+
+
+.today::after{
+
+    content:"";
+
+    position:absolute;
 
 }
 
@@ -593,7 +664,31 @@ textarea{
 }
 
 
+.mountain{
 
+    position:fixed;
+
+    right:0;
+    bottom:0;
+
+    width:400px;
+    height:250px;
+
+    opacity:.08;
+
+
+    background:
+
+    linear-gradient(
+    135deg,
+    transparent 40%,
+    #65705a 41%,
+    transparent 60%
+    );
+
+    transform:rotate(-10deg);
+
+}
 
 
 /* 竹影 */
