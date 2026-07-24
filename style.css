@@ -196,9 +196,11 @@ color:#29251f;
 
     width:50%;
 
-    padding:70px;
+    padding:50px;
 
     position:relative;
+
+    box-sizing:border-box;
 
 }
 
@@ -242,14 +244,53 @@ h1{
 }
 
 
+.season{
+
+margin-top:20px;
+
+margin-bottom:25px;
+
+font-size:14px;
+
+color:#766b56;
+
+}
+
+
+.season h3{
+
+font-size:20px;
+
+margin-bottom:10px;
+
+}
+
+
+.season h4{
+
+font-size:18px;
+
+margin:5px 0;
+
+}
+
+
+.date-info{
+
+text-align:center;
+
+color:#766b56;
+
+margin-bottom:25px;
+
+}
+
+
 .weather{
 
-    position:absolute;
+	margin-top:25px;
 
-    left:60px;
-
-    top:400px;
-
+        color:#
 }
 
 
@@ -825,5 +866,38 @@ letter-spacing:5px;
 
     );
 
+}
+
+
+/* 左右页面 */
+
+.page{
+
+width:50%;
+
+height:100%;
+
+box-sizing:border-box;
+
+padding:70px;
 
 }
+
+
+/* 左页 */
+
+.left{
+
+border-right:1px solid rgba(120,100,70,.15);
+
+}
+
+
+/* 右页 */
+
+.right{
+
+position:relative;
+
+}
+
