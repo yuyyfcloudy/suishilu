@@ -235,28 +235,6 @@ h2{
 
 /* 日期 */
 
-.day{
-
-
-    padding:12px;
-
-
-    margin:4px;
-
-
-    cursor:pointer;
-
-
-    border-radius:50%;
-
-
-    transition:.25s;
-
-
-}
-
-
-
 
 
 .day:hover{
@@ -459,10 +437,22 @@ textarea{
 
     justify-content:center;
 
+
     height:55px;
 
-}
+    padding:12px;
 
+    margin:4px;
+
+
+    cursor:pointer;
+
+    border-radius:50%;
+
+
+    transition:.25s;
+
+}
 
 
 .lunar-day{
@@ -498,5 +488,145 @@ textarea{
 .today .lunar-day{
 
     color:#eee;
+
+}
+
+/* ===== 东方装饰 ===== */
+
+
+.seal{
+
+    position:absolute;
+
+    right:70px;
+
+    top:80px;
+
+
+    width:55px;
+
+    height:55px;
+
+
+    border:2px solid #a33b32;
+
+
+    color:#a33b32;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    text-align:center;
+
+
+    font-size:20px;
+
+
+    line-height:22px;
+
+
+    font-family:"KaiTi";
+
+
+    opacity:.75;
+
+
+    transform:rotate(-8deg);
+
+}
+
+
+
+/* 云雾 */
+
+.cloud{
+
+    position:fixed;
+
+    width:180px;
+
+    height:70px;
+
+
+    background:
+
+    radial-gradient(
+
+    ellipse,
+
+    rgba(255,255,255,.5),
+
+    transparent
+
+    );
+
+
+    filter:blur(10px);
+
+
+}
+
+
+.cloud1{
+
+    top:80px;
+
+    left:100px;
+
+}
+
+
+.cloud2{
+
+    bottom:100px;
+
+    right:100px;
+
+}
+
+
+
+
+
+/* 竹影 */
+
+
+.bamboo{
+
+    position:fixed;
+
+
+    right:-30px;
+
+    bottom:-20px;
+
+
+    width:250px;
+
+    height:400px;
+
+
+    opacity:.08;
+
+
+    background:
+
+    linear-gradient(
+
+    100deg,
+
+    transparent 40%,
+
+    #65705a 42%,
+
+    transparent 44%
+
+    );
+
 
 }
