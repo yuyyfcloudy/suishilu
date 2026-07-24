@@ -443,4 +443,60 @@ textarea{
     height:120px;
 
 
+
+}
+
+/* 新日期样式 */
+
+
+.day{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    height:55px;
+
+}
+
+
+
+.lunar-day{
+
+    font-size:11px;
+
+    color:#8a806d;
+
+}
+
+
+
+.solar-day{
+
+    font-size:18px;
+
+    margin-top:3px;
+
+}
+
+
+
+.today{
+
+    background:#65705a;
+
+    color:white;
+
+}
+
+
+
+.today .lunar-day{
+
+    color:#eee;
+
 }
