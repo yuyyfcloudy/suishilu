@@ -3,6 +3,38 @@
 }
 
 
+.right button{
+
+position:absolute;
+
+bottom:60px;
+
+left:60px;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+font-size:14px;
+
+letter-spacing:5px;
+
+color:#98896d;
+
+}
+
+
+.calendar{
+
+margin-top:30px;
+
+transform:scale(1.08);
+
+}
+
+
 body{
 
     margin:0;
