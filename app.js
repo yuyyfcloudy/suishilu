@@ -97,6 +97,12 @@ function createCalendar(){
 
         d.className="day";
 
+        if(
+		i===now.getDate()
+	){
+		 d.classList.add("today");
+	}
+
         d.innerHTML=
 	`
 	<span class="lunar-day">
@@ -184,31 +190,61 @@ function saveNote(){
 
 function showNotes(){
 
-    let box=
+    let box =
     document.getElementById("notes");
 
 
     box.innerHTML="";
 
+    if(notes.length===0){
 
-    notes.forEach(n=>{
+	box.innerHTML=
+	`
+	<div class="empty">
+	暂无笺录
+	</div>
+	`;
+
+	return;
+
+	}
+
+
+    notes.forEach((n,index)=>{
+
 
         box.innerHTML+=`
 
         <div class="note">
 
-        ${n.date}
-        ${n.time}
 
-        <br>
+            <div>
+            ${n.date}
+            ${n.time}
+            </div>
 
-        ${n.text}
+
+            <p>
+            ${n.text}
+            </p>
+
+
+            <button 
+            class="delete-btn"
+            onclick="deleteNote(${index})">
+
+            删除
+
+            </button>
+
 
         </div>
 
         `;
 
+
     });
+
 
 }
 
@@ -274,5 +310,28 @@ document.getElementById(
 "reminder"
 )
 .style.display="none";
+
+}
+
+
+
+function deleteNote(index){
+
+
+    if(!confirm("确定删除这一笺吗？")){
+        return;
+    }
+
+
+    notes.splice(index,1);
+
+
+    localStorage.setItem(
+        "notes",
+        JSON.stringify(notes)
+    );
+
+
+    showNotes();
 
 }

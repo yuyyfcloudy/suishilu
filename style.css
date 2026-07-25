@@ -938,3 +938,47 @@ height:120px;
     letter-spacing:6px;
 
 }
+
+
+
+
+.delete-btn{
+
+
+    background:transparent;
+
+    color:#a33b32;
+
+
+    border:1px solid #a33b32;
+
+
+    padding:5px 14px;
+
+
+    font-size:12px;
+
+
+    border-radius:20px;
+
+
+    letter-spacing:2px;
+
+
+    margin-top:8px;
+
+
+}
+
+
+.delete-btn:hover{
+
+
+    background:#a33b32;
+
+    color:white;
+
+}
+
+
+
