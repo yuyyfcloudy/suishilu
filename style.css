@@ -210,19 +210,18 @@ color:#29251f;
 
 .left{
 
-    border-right:
-	
-    width:45%;	
+    width:50%;
 
-    1px solid #ddd0b5;
+    border-right:1px solid #ddd0b5;
 
 }
 
 
 .right{
- width:55%;
-}
 
+    width:50%;
+
+}
 
 
 /* 标题 */
@@ -290,7 +289,7 @@ margin-bottom:25px;
 
 	margin-top:25px;
 
-        color:#
+        color:#766b56;
 }
 
 
@@ -879,8 +878,6 @@ height:100%;
 
 box-sizing:border-box;
 
-padding:70px;
-
 }
 
 
@@ -890,6 +887,14 @@ padding:70px;
 
 border-right:1px solid rgba(120,100,70,.15);
 
+}
+
+.left{
+    width:50%;
+}
+
+.right{
+    width:50%;
 }
 
 
