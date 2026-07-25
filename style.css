@@ -32,7 +32,7 @@ color:#98896d;
 
     margin:30px 0 0;
 
-    transform:scale(1);
+    transform:none;
 
 }
 
@@ -190,25 +190,6 @@ color:#29251f;
 
 }
 
-
-.page{
-
-    width:50%;
-
-    padding:50px 30px;
-
-    position:relative;
-
-    box-sizing:border-box;
-
-}
-
-
-.right{
-
-    width:50%;
-
-}
 
 
 /* 标题 */
@@ -854,24 +835,12 @@ letter-spacing:5px;
 }
 
 
-/* 左右页面 */
-
-.page{
-
-width:50%;
-
-height:100%;
-
-box-sizing:border-box;
-
-}
-
 
 /* 左页面 */
 
 .left{
 
-    width:50%;
+    width:60%;
 
     height:100%;
 
@@ -880,11 +849,47 @@ box-sizing:border-box;
 }
 
 
+
 /* 右页 */
 
 .right{
 
-position:relative;
+    width:40%;
+
+    height:100%;
+
+    position:relative;
 
 }
 
+
+/* 页面 */
+
+.page{
+
+    height:100%;
+
+    padding:40px;
+
+    position:relative;
+
+    box-sizing:border-box;
+
+}
+
+
+/* 图片预留区域 */
+
+.cover-image{
+
+    width:80%;
+
+    height:120px;
+
+    margin:30px auto;
+
+    border:1px dashed #c8b998;
+
+    border-radius:15px;
+
+}
