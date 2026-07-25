@@ -3,39 +3,7 @@
 }
 
 
-.right button{
-
-position:absolute;
-
-bottom:60px;
-
-left:60px;
-
-}
-
-.subtitle{
-
-text-align:center;
-
-font-size:14px;
-
-letter-spacing:5px;
-
-color:#98896d;
-
-}
-
-
-.calendar{
-
-    width:100%;
-
-    margin:30px 0 0;
-
-    transform:none;
-
-}
-
+/* ===== 页面 ===== */
 
 body{
 
@@ -49,15 +17,12 @@ body{
 
     align-items:center;
 
-
     background:
-
     linear-gradient(
         135deg,
         #f7f1e3,
         #e9dfc8
     );
-
 
     font-family:
     "Noto Serif SC",
@@ -65,51 +30,34 @@ body{
     "STSong",
     serif;
 
-
     color:#29251f;
 
 }
 
 
-body::after{
 
-content:"";
+/* ===== 书本主体 ===== */
 
-position:fixed;
-
-right:80px;
-bottom:30px;
-
-width:250px;
-height:250px;
-
-background:
-linear-gradient(
-120deg,
-transparent 45%,
-rgba(80,100,70,.08) 46%,
-transparent 47%
-);
-
-transform:rotate(-20deg);
-
-}
-
-/* 页面整体 */
 
 .book{
 
     width:1100px;
+
     height:700px;
 
-    display:flex;
+    position:relative;
+
+    overflow:hidden;
 
     background:
+
     radial-gradient(
         rgba(120,100,60,.05) 1px,
         transparent 1px
     ),
+
     #f8f3e7;
+
 
     background-size:8px 8px;
 
@@ -117,35 +65,25 @@ transform:rotate(-20deg);
     border-radius:24px;
 
 
-    overflow:hidden;
-
-
     box-shadow:
 
     0 30px 80px rgba(50,40,20,.18);
 
 
-    position:relative;
-
 }
 
 
 
-/* 东方装饰线 */
 
 .book::before{
 
-
     content:"";
 
-
     position:absolute;
-
 
     top:0;
 
     left:0;
-
 
     width:100%;
 
@@ -164,100 +102,151 @@ transform:rotate(-20deg);
 }
 
 
-.week span{
 
-color:#a33b32;
-
-font-size:16px;
-
-}
+/* ===== 顶部文字 ===== */
 
 
-.lunar-day{
+.subtitle{
 
-font-size:12px;
+    position:absolute;
 
-color:#92836b;
+    top:20px;
 
-}
+    left:70px;
+
+    margin:0;
 
 
-.solar-day{
+    font-size:14px;
 
-font-size:20px;
+    letter-spacing:5px;
 
-color:#29251f;
+    color:#98896d;
 
 }
 
 
 
-/* 标题 */
+
+/* ===== 图片区域 ===== */
+
+
+.photo-box{
+
+    position:absolute;
+
+    top:0px;
+
+    left:70px;
+
+    width:240px;
+
+    height:80px;
+
+    border:1px dashed #c8b998;
+
+    border-radius:12px;
+
+}
+
+
+
+
+/* ===== 左右页面容器 ===== */
+
+
+.pages{
+
+    position:absolute;
+
+
+    left:0;
+
+    bottom:0;
+
+
+    width:100%;
+
+
+    height:650px;
+
+
+    display:flex;
+
+}
+
+
+
+
+.page{
+
+
+    height:100%;
+
+
+    padding:40px;
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+.left{
+
+
+    width:60%;
+
+
+    border-right:
+
+    1px solid rgba(120,100,70,.15);
+
+
+}
+
+
+
+
+.right{
+
+
+    width:40%;
+
+
+    position:relative;
+
+
+}
+
+
+
+/* ===== 标题 ===== */
+
+
 
 h1{
 
-    text-align:left;
+text-align:center;
 
-    font-size:48px;
+font-size:48px;
 
-    letter-spacing:10px;
+letter-spacing:10px;
 
-    font-weight:500;
+font-weight:500;
 
-    margin:20px 0;
-
-    white-space:nowrap;
-
-}
-
-.season{
-
-margin-top:20px;
-
-margin-bottom:25px;
-
-font-size:14px;
-
-color:#766b56;
-
-}
-
-
-.season h3{
-
-font-size:20px;
+margin-top:45px;
 
 margin-bottom:10px;
 
 }
 
 
-.season h4{
 
-font-size:18px;
-
-margin:5px 0;
-
-}
-
-
-.date-info{
-
-text-align:center;
-
-color:#766b56;
-
-margin-bottom:30px;
-
-}
-
-
-.weather{
-
-	margin-top:25px;
-
-        color:#766b56;
-}
 
 
 h2{
@@ -280,6 +269,8 @@ h2{
 
 
 
+/* 日期 */
+
 
 .date-info{
 
@@ -290,7 +281,10 @@ h2{
     color:#75664d;
 
 
-    line-height:30px;
+    line-height:24px;
+
+
+    margin-bottom:10px;
 
 
 }
@@ -298,56 +292,184 @@ h2{
 
 
 
+/* 节气 */
 
-/* 星期 */
+
+.season{
+
+
+    margin-top:5px;
+
+
+    margin-bottom:5px;
+
+
+    color:#766b56;
+
+
+    font-size:14px;
+
+
+}
+
+
+.season h3{
+
+    font-size:20px;
+
+    margin:0 0 8px;
+
+}
+
+
+.season h4{
+
+    font-size:18px;
+
+    margin:5px 0;
+
+}
+
+
+.season p{
+
+margin:5px 0;
+
+line-height:20px;
+
+}
+
+
+
+
+/* =========================
+   日历区域
+========================= */
+
 
 .week,
 #days{
 
-
     display:grid;
 
-
-    grid-template-columns:
-    repeat(7,1fr);
-
+    grid-template-columns:repeat(7,1fr);
 
     text-align:center;
 
-
 }
-
-
-
 
 
 .week span{
 
-
     color:#65705a;
 
+    font-size:16px;
 
-    padding:15px 0;
-
+    padding:5px 0;
 
 }
 
 
+.calendar{
+
+width:87%;
+
+margin-top:0;
+
+position:absolute;
+
+left:40px;
+
+right:40px;
+
+bottom:38px;
+
+}
 
 
+.day{
 
-/* 日期 */
+    height:35px;
+
+    margin:1px;
+
+    font-size:14px;
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
 
 
 
 .day:hover{
 
-
     background:#65705a;
-
 
     color:white;
 
+    transform:translateY(-3px);
+
+}
+
+
+
+.lunar-day{
+
+    font-size:9px;
+
+    line-height:2px;
+
+    color:#92836b;
+
+}
+
+
+
+.solar-day{
+
+    font-size:18px;
+
+    margin-top:1px;
+
+}
+
+
+
+.day:hover .lunar-day{
+
+    color:white;
+
+}
+
+
+
+.today{
+
+    background:#a33b32;
+
+    color:white;
+
+    border-radius:50%;
+
+}
+
+
+
+.today .lunar-day{
+
+    color:#eee;
 
 }
 
@@ -355,7 +477,83 @@ h2{
 
 
 
-/* 添加按钮 */
+/* =========================
+   右侧笺录
+========================= */
+
+
+.right h2{
+
+    text-align:center;
+
+    font-size:28px;
+
+    font-weight:400;
+
+    letter-spacing:8px;
+
+}
+
+
+
+.note{
+
+    padding:15px 0;
+
+    border-bottom:
+
+    1px solid #ddd0b5;
+
+
+    color:#504532;
+
+}
+
+
+
+.daily{
+
+    margin-top:70px;
+
+    padding-top:20px;
+
+    border-top:
+
+    1px solid #ddd0b5;
+
+
+    color:#75664d;
+
+}
+
+
+
+.daily h3{
+
+    font-size:20px;
+
+    font-weight:400;
+
+    letter-spacing:5px;
+
+}
+
+
+
+.daily p{
+
+    line-height:30px;
+
+}
+
+
+
+
+
+/* =========================
+   按钮
+========================= */
+
 
 button{
 
@@ -369,7 +567,7 @@ button{
     border:none;
 
 
-    padding:12px 28px;
+    padding:12px 30px;
 
 
     border-radius:30px;
@@ -406,22 +604,19 @@ button:hover{
 
 
 
+.right button{
 
 
-/* 记录 */
-
-.note{
+    position:absolute;
 
 
-    padding:16px 0;
+    bottom:50px;
 
 
-    border-bottom:
-
-    1px solid #ddd0b5;
+    left:50%;
 
 
-    color:#504532;
+    transform:translateX(-50%);
 
 
 }
@@ -430,7 +625,210 @@ button:hover{
 
 
 
-/* 弹窗 */
+
+/* =========================
+   东方装饰
+========================= */
+
+
+.seal{
+
+
+    position:fixed;
+
+
+    right:40px;
+
+
+    top:40px;
+
+
+    width:55px;
+
+
+    height:80px;
+
+
+    border:2px solid #a33b32;
+
+
+    color:#a33b32;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    writing-mode:vertical-rl;
+
+
+    font-family:"KaiTi","STKaiti",serif;
+
+
+    font-size:20px;
+
+
+    letter-spacing:8px;
+
+
+    opacity:.75;
+
+
+    transform:rotate(-8deg);
+
+
+}
+
+
+
+.cloud{
+
+
+    position:fixed;
+
+
+    width:180px;
+
+
+    height:70px;
+
+
+    background:
+
+
+    radial-gradient(
+
+    ellipse,
+
+    rgba(255,255,255,.5),
+
+    transparent
+
+    );
+
+
+    filter:blur(10px);
+
+}
+
+
+
+.cloud1{
+
+top:80px;
+
+left:100px;
+
+}
+
+
+
+.cloud2{
+
+bottom:100px;
+
+right:100px;
+
+}
+
+
+
+
+
+.mountain{
+
+
+    position:fixed;
+
+
+    right:0;
+
+
+    bottom:0;
+
+
+    width:400px;
+
+
+    height:250px;
+
+
+    opacity:.08;
+
+
+    background:
+
+
+    linear-gradient(
+
+    135deg,
+
+    transparent 40%,
+
+    #65705a 41%,
+
+    transparent 60%
+
+    );
+
+
+    transform:rotate(-10deg);
+
+
+}
+
+
+
+.bamboo{
+
+
+    position:fixed;
+
+
+    right:-30px;
+
+
+    bottom:-20px;
+
+
+    width:250px;
+
+
+    height:400px;
+
+
+    opacity:.08;
+
+
+    background:
+
+
+    linear-gradient(
+
+    100deg,
+
+    transparent 40%,
+
+    #65705a 42%,
+
+    transparent 44%
+
+    );
+
+}
+
+
+
+
+
+/* =========================
+   弹窗
+========================= */
 
 
 .modal,
@@ -457,8 +855,9 @@ button:hover{
     align-items:center;
 
 
-}
+    z-index:100;
 
+}
 
 
 
@@ -481,10 +880,12 @@ button:hover{
 
     box-shadow:
 
+
     0 20px 60px rgba(0,0,0,.3);
 
 
 }
+
 
 
 
@@ -504,6 +905,7 @@ textarea{
 
     border:
 
+
     1px solid #d8c7a3;
 
 
@@ -517,379 +919,22 @@ textarea{
 
 
 
-
 textarea{
 
-
-    height:120px;
-
-
-
-}
-
-/* 新日期样式 */
-
-
-.day{
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-
-    height:60px;
-
-    margin:5px;
-
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-
-    border-radius:12px;
-
-
-    transition:.3s;
+height:120px;
 
 }
 
 
-.day:hover{
-
-    background:#65705a;
-
-    color:white;
-
-    transform:translateY(-3px);
-
-}
 
 
-.day:hover .lunar-day{
-
-    color:white;
-
-}
+.reminder h2,
+.paper h2{
 
 
-.today{
-
-    background:#a33b32;
-
-    color:white;
-
-    border-radius:50%;
-
-}
-
-
-.daily{
-
-margin-top:80px;
-
-padding-top:20px;
-
-border-top:1px solid #ddd0b5;
-
-color:#75664d;
-
-}
-
-
-.daily h3{
-
-font-size:20px;
-
-font-weight:400;
-
-letter-spacing:5px;
-
-}
-
-
-.today::after{
-
-    content:"";
-
-}
-
-
-.subtitle{
     text-align:center;
-    width:100%;
-    margin-top:20px;
-}
 
 
-.lunar-day{
-
-    font-size:11px;
-
-    color:#8a806d;
-
-}
-
-
-
-.solar-day{
-
-    font-size:18px;
-
-    margin-top:3px;
-
-}
-
-
-
-.today{
-
-    background:#65705a;
-
-    color:white;
-
-}
-
-
-
-.today .lunar-day{
-
-    color:#eee;
-
-}
-
-/* ===== 东方装饰 ===== */
-
-
-.seal{
-
-	transform:
- rotate(-8deg);
-    position:fixed;
-
-    right:40px;
-    top:40px;
-
-
-    width:55px;
-    height:80px;
-
-
-    border:2px solid #a33b32;
-
-    color:#a33b32;
-
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-
-    writing-mode:vertical-rl;
-
-
-    font-family:"KaiTi","STKaiti",serif;
-
-
-    font-size:20px;
-
-
-    letter-spacing:8px;
-
-
-    line-height:1;
-
-
-    opacity:.75;
-
-
-    transform:rotate(-8deg);
-
-
-    background:
-    rgba(250,245,232,.25);
-
-}
-
-
-/* 云雾 */
-
-.cloud{
-
-    position:fixed;
-
-    width:180px;
-
-    height:70px;
-
-
-    background:
-
-    radial-gradient(
-
-    ellipse,
-
-    rgba(255,255,255,.5),
-
-    transparent
-
-    );
-
-
-    filter:blur(10px);
-
-
-}
-
-
-.cloud1{
-
-    top:80px;
-
-    left:100px;
-
-}
-
-
-.cloud2{
-
-    bottom:100px;
-
-    right:100px;
-
-}
-
-
-.mountain{
-
-    position:fixed;
-
-    right:0;
-    bottom:0;
-
-    width:400px;
-    height:250px;
-
-    opacity:.08;
-
-
-    background:
-
-    linear-gradient(
-    135deg,
-    transparent 40%,
-    #65705a 41%,
-    transparent 60%
-    );
-
-    transform:rotate(-10deg);
-
-}
-
-
-/* 竹影 */
-
-
-.bamboo{
-
-    position:fixed;
-
-
-    right:-30px;
-
-    bottom:-20px;
-
-
-    width:250px;
-
-    height:400px;
-
-
-    opacity:.08;
-
-
-    background:
-
-    linear-gradient(
-
-    100deg,
-
-    transparent 40%,
-
-    #65705a 42%,
-
-    transparent 44%
-
-    );
-
-}
-
-
-
-/* 左页面 */
-
-.left{
-
-    width:60%;
-
-    height:100%;
-
-    border-right:1px solid rgba(120,100,70,.15);
-
-}
-
-
-
-/* 右页 */
-
-.right{
-
-    width:40%;
-
-    height:100%;
-
-    position:relative;
-
-}
-
-
-/* 页面 */
-
-.page{
-
-    height:100%;
-
-    padding:40px;
-
-    position:relative;
-
-    box-sizing:border-box;
-
-}
-
-
-/* 图片预留区域 */
-
-.cover-image{
-
-    width:80%;
-
-    height:120px;
-
-    margin:30px auto;
-
-    border:1px dashed #c8b998;
-
-    border-radius:15px;
+    letter-spacing:6px;
 
 }
