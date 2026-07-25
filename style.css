@@ -28,12 +28,11 @@ color:#98896d;
 
 .calendar{
 
- width:90%;
-    margin:30px auto 0;
+    width:100%;
 
-margin-top:30px;
+    margin:30px 0 0;
 
-transform:scale(1.08);
+    transform:scale(1);
 
 }
 
@@ -205,18 +204,6 @@ color:#29251f;
 }
 
 
-
-
-
-.left{
-
-    width:50%;
-
-    border-right:1px solid #ddd0b5;
-
-}
-
-
 .right{
 
     width:50%;
@@ -228,7 +215,7 @@ color:#29251f;
 
 h1{
 
-    text-align:center;
+    text-align:left;
 
     font-size:48px;
 
@@ -241,7 +228,6 @@ h1{
     white-space:nowrap;
 
 }
-
 
 .season{
 
@@ -280,7 +266,7 @@ text-align:center;
 
 color:#766b56;
 
-margin-bottom:25px;
+margin-bottom:30px;
 
 }
 
@@ -881,27 +867,16 @@ box-sizing:border-box;
 }
 
 
-.left{
-
-    padding:50px 80px 50px 50px;
-
-}
-
-
-/* 左页 */
+/* 左页面 */
 
 .left{
 
-border-right:1px solid rgba(120,100,70,.15);
-
-}
-
-.left{
     width:50%;
-}
 
-.right{
-    width:50%;
+    height:100%;
+
+    border-right:1px solid rgba(120,100,70,.15);
+
 }
 
 
