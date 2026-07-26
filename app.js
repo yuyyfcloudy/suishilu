@@ -1,6 +1,20 @@
 function getLunar(day){
 
 let lunar=[
+"十七",
+"十八",
+"十九",
+"二十",
+"廿一",
+"廿二",
+"廿三",
+"廿四",
+"廿五",
+"廿六",
+"廿七",
+"廿八",
+"廿九",
+"三十",
 "初一",
 "初二",
 "初三",
@@ -16,21 +30,7 @@ let lunar=[
 "十三",
 "十四",
 "十五",
-"十六",
-"十七",
-"十八",
-"十九",
-"二十",
-"廿一",
-"廿二",
-"廿三",
-"廿四",
-"廿五",
-"廿六",
-"廿七",
-"廿八",
-"廿九",
-"三十"
+"十六"
 ];
 
 
@@ -210,7 +210,7 @@ function showNotes(){
 	}
 
 
-    notes.forEach((n,index)=>{
+notes.forEach((n,index)=>{
 
 
         box.innerHTML+=`
@@ -218,24 +218,30 @@ function showNotes(){
         <div class="note">
 
 
-            <div>
-            ${n.date}
-            ${n.time}
+            <div class="note-head">
+
+
+                <div>
+                ${n.date}
+                ${n.time}
+                </div>
+
+
+                <button 
+                class="delete-btn"
+                onclick="deleteNote(${index})">
+
+                删除
+
+                </button>
+
+
             </div>
 
 
             <p>
             ${n.text}
             </p>
-
-
-            <button 
-            class="delete-btn"
-            onclick="deleteNote(${index})">
-
-            删除
-
-            </button>
 
 
         </div>
@@ -253,7 +259,10 @@ showNotes();
 
 
 
-// 每分钟检查提醒
+// 每秒检查提醒
+
+let reminded=[];
+
 
 setInterval(()=>{
 
@@ -279,7 +288,8 @@ notes.forEach(n=>{
 
 if(
 n.date===current &&
-n.time===time
+n.time===time &&
+!reminded.includes(n)
 ){
 
 document.getElementById(
@@ -287,10 +297,15 @@ document.getElementById(
 ).innerHTML=n.text;
 
 
+
 document.getElementById(
 "reminder"
 )
 .style.display="flex";
+
+
+
+reminded.push(n);
 
 
 }
@@ -300,7 +315,7 @@ document.getElementById(
 });
 
 
-},60000);
+},1000);
 
 
 
