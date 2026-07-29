@@ -67,9 +67,7 @@
 
 <p id="today"></p>
 
-<p id="lunar">
-农历六月初九 · 大暑
-</p>
+<p id="lunar"></p>
 
 </div>
 
@@ -127,6 +125,21 @@
 
 <div class="calendar">
 
+<div class="calendar-head">
+
+<button onclick="changeMonth(-1)">
+‹
+</button>
+
+<h3 id="monthTitle"></h3>
+
+<button onclick="changeMonth(1)">
+›
+</button>
+
+</div>
+
+
 <div class="week">
 
 <span>日</span>
@@ -145,10 +158,7 @@
 
 </div>
 
-
 </div>
-
-
 
 
 
@@ -286,6 +296,8 @@ placeholder="写下今日之事……">
 
 
 
+
+<script src="https://cdn.jsdelivr.net/npm/lunar-javascript/lunar.js"></script>
 
 <script src="app.js"></script>
 

@@ -1,42 +1,31 @@
-function getLunar(day){
-
-let lunar=[
-"十七",
-"十八",
-"十九",
-"二十",
-"廿一",
-"廿二",
-"廿三",
-"廿四",
-"廿五",
-"廿六",
-"廿七",
-"廿八",
-"廿九",
-"三十",
-"初一",
-"初二",
-"初三",
-"初四",
-"初五",
-"初六",
-"初七",
-"初八",
-"初九",
-"初十",
-"十一",
-"十二",
-"十三",
-"十四",
-"十五",
-"十六"
-];
+function getLunar(year, month, day){
 
 
-return lunar[(day-1)%30];
+    let solar =
+    Solar.fromYmd(
+        year,
+        month,
+        day
+    );
+
+
+    let lunar =
+    solar.getLunar();
+
+
+    console.log(
+        year,
+        month,
+        day,
+        lunar.toString()
+    );
+
+
+    return lunar.getDayInChinese();
+
 
 }
+
 
 let notes =
 JSON.parse(localStorage.getItem("notes"))
@@ -51,11 +40,19 @@ const now =
 new Date();
 
 
-document.getElementById("today").innerHTML =
-`${now.getFullYear()}年
-${now.getMonth()+1}月
-${now.getDate()}日`;
+let viewYear = now.getFullYear();
 
+let viewMonth = now.getMonth();
+
+
+document.getElementById("lunar").innerHTML =
+`
+农历${getLunar(
+now.getFullYear(),
+now.getMonth()+1,
+now.getDate()
+)}
+`;
 
 
 function createCalendar(){
@@ -63,12 +60,14 @@ function createCalendar(){
     days.innerHTML="";
 
 
-    let year =
-    now.getFullYear();
+    let year = viewYear;
+
+    let month = viewMonth;
 
 
-    let month =
-    now.getMonth();
+    document.getElementById("monthTitle")
+    .innerHTML =
+    `${year}年 ${month+1}月`;
 
 
 
@@ -83,58 +82,119 @@ function createCalendar(){
 
 
 
+    // 补空白
+
     for(let i=0;i<first;i++){
 
-        days.innerHTML+="<div></div>";
+        days.innerHTML +=
+        "<div></div>";
 
     }
 
 
 
+    // 生成日期
+
     for(let i=1;i<=total;i++){
 
-        let d=document.createElement("div");
+
+        let d =
+        document.createElement("div");
+
 
         d.className="day";
 
+
+
+        // 今天标记
+
         if(
-		i===now.getDate()
-	){
-		 d.classList.add("today");
-	}
+            year===now.getFullYear()
+            &&
+            month===now.getMonth()
+            &&
+            i===now.getDate()
+        ){
+
+            d.classList.add("today");
+
+        }
+
+
 
         d.innerHTML=
-	`
-	<span class="lunar-day">
-	${getLunar(i)}
-	</span>
+        `
+        <span class="lunar-day">
+	${getLunar(year,month+1,i)}
+        </span>
 
-	<span class="solar-day">
-	${i}
-	</span>
-	`;
+        <span class="solar-day">
+        ${i}
+        </span>
+        `;
+
 
 
         d.onclick=()=>{
 
-            document.getElementById("noteDate").value=
+
+            document.getElementById(
+                "noteDate"
+            ).value =
+
             `${year}-${String(month+1).padStart(2,"0")}-${String(i).padStart(2,"0")}`;
 
+
             openNote();
+
 
         };
 
 
+
         days.appendChild(d);
 
+
     }
+
 
 }
 
 
-
 createCalendar();
 
+
+function changeMonth(step){
+
+
+    viewMonth += step;
+
+
+
+    if(viewMonth > 11){
+
+        viewMonth = 0;
+
+        viewYear++;
+
+    }
+
+
+
+    if(viewMonth < 0){
+
+        viewMonth = 11;
+
+        viewYear--;
+
+    }
+
+
+
+    createCalendar();
+
+
+}
 
 
 function openNote(){
